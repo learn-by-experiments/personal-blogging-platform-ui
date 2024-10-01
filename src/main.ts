@@ -1,4 +1,6 @@
-import { marked } from "marked";
+import { displayArticlesList } from "./articles/displayArticlesList";
 import "./style.css";
+import "./tabs";
+import "./articles/createArticleForm";
 
-console.log(marked.parse("Hello *World*!"));
+displayArticlesList();
