@@ -1,0 +1,16 @@
+name: build
+on:
+ - push
+jobs:
+  build-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup node.js environment
+        uses: actions/setup-node@20.x
+      - run: echo "installing the dependencies"
+      - run: npm install
+      - run: echo "build the code"
+      - run: npm run build
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+        
+      
