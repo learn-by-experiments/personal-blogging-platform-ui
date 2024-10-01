@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div id="articles-list-container" class="container mx-auto">
+    <div id="articles-list-outer-container" class="container mx-auto">
       <div class="flex justify-between items-center">
         <div class="mx-1">
           <button
@@ -69,13 +69,7 @@
           <ul
             class="grid gap-2 grid-cols-1 m-4 sm:m-0 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
             id="articles-list-container"
-          >
-            <!-- <li
-                            class="border-2 border-solid border-blue-400 drop-shadow-2xl shadow-lg rounded-lg p-3"
-                        >
-                            Article 01
-                        </li> -->
-          </ul>
+          ></ul>
         </div>
         <div class="mx-1 justify-end">
           <button
@@ -106,9 +100,10 @@
     >
       <form
         method="post"
-        class="shadow-lg w-full col-span-8 col-start-3 m-8 rounded-lg p-2"
+        class="shadow-lg w-full col-span-8 col-start-3 m-8 rounded-lg p-2 ring-1"
         id="create-article-form"
       >
+        <h2 class="text-xl text-center font-bold">Add New Article</h2>
         <div class="m-2">
           <label for="title-input" class="block text-sm font-medium"
             >Title</label
@@ -144,10 +139,13 @@
       id="article-container"
     >
       <article class="col-start-3 col-span-8">
-        <h4 class="m-8 text-2xl text-center font-bold" id="article-heading">
-          Big Billion Sale Vouchers Summary
-        </h4>
-        <div id="article-body" class="ring-2 p-2 rounded-lg"></div>
+        <h4
+          class="m-8 text-2xl text-center font-bold"
+          id="article-heading"
+        ></h4>
+        <div id="article-body" class="ring-2 p-2 rounded-lg">
+          No articles added yet
+        </div>
       </article>
     </div>
 
