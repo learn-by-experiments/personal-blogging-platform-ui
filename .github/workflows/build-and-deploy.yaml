@@ -39,7 +39,7 @@ jobs:
          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
          git add dist -f
          git commit -m "adding dist"
-         git push origin HEAD:gh-pages  # Push to the 'gh-pages' branch
+         git subtree push --prefix dist origin gh-pages  # Push to the 'gh-pages' branch
       - run: echo "🍏 deploy process is done"
     
         
