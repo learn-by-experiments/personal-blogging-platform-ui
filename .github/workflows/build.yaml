@@ -11,17 +11,15 @@ jobs:
         uses: actions/setup-node@v4.0.4
         with: 
          node-version: 20.x
-      - name: check the node version
+      - name: Check the node version
         run: node -v
-      - name: check the npm version
+      - name: Check the npm version
         run: npm -v
-      - name: List the root directory of container
-        run: ls
       - name: List project directory
-        run: ls ./personal-blogging-platform-ui
-      - name: installing all dependencies
+        run: ls
+      - name: Installing all dependencies
         run: npm install
-      - name: create build folder
+      - name: Create build folder
         run: npm run build
       - run: echo "🍏 This job's status is ${{ job.status }}."
         
