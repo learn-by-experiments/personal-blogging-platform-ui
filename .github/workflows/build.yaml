@@ -5,6 +5,8 @@ jobs:
   build-status:
     runs-on: ubuntu-latest
     steps:
+      - name: clone the repository i.e. Check out repository code
+        uses: actions/checkout@v4.2.0
       - name: setup node.js environment
         uses: actions/setup-node@v4.0.4
         with: 
@@ -13,8 +15,10 @@ jobs:
         run: node -v
       - name: check the npm version
         run: npm -v
-      - name: list the root directory of container
+      - name: List the root directory of container
         run: ls
+      - name: List project directory
+        run: ls ./personal-blogging-platform-ui
       - name: installing all dependencies
         run: npm install
       - name: create build folder
