@@ -1,0 +1,45 @@
+name: build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: clone the repository i.e. Check out repository code
+        uses: actions/checkout@v4.2.0
+      - name: setup node.js environment
+        uses: actions/setup-node@v4.0.4
+        with:
+          node-version: 20.x
+      - name: Check the node version
+        run: node -v
+      - name: Check the npm version
+        run: npm -v
+      - name: List project directory
+        run: ls
+      - name: Installing all dependencies
+        run: npm install
+      - name: Create build folder
+        run: npm run build
+      - name: List project directory
+        run: ls
+      - run: echo "🍏 build process is done"
+      - name: Check git version
+        run: git -v
+      - name: List project directory
+        run: ls
+      - name: Init Git
+        run: git init
+      - name: Deploy to github pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git add dist -f
+          git commit -m "adding dist"
+          git push origin `git subtree split --prefix dist main`:gh-pages --force  # Push to the 'gh-pages' branch
+      - run: echo "🍏 deploy process is done"
