@@ -28,6 +28,10 @@ jobs:
     steps:
      - name: Check git version
        run: git -v
+     - name: List project directory
+       run: ls
+     - name: Init Git
+       run: git init
      - name: Deploy to github pages
        run: |
         git config --global user.name "github-actions[bot]"
