@@ -1,11 +1,14 @@
-import { Article, ArticlesService, ArticlesApiError } from "./articles.service";
+import {
+  Article,
+  ArticlesService,
+  ArticlesApiError,
+} from "../services/articles.service";
 
 const createArticleForm = document.getElementById("create-article-form")!;
 const articlesApi = new ArticlesService();
 
 createArticleForm.addEventListener("submit", async (event: SubmitEvent) => {
   event.preventDefault();
-  console.log("Article created!", event);
   const titleInput = document.getElementById("title-input") as HTMLInputElement;
 
   const contentInput = document.getElementById(

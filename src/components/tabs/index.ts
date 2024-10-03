@@ -1,4 +1,4 @@
-import { displayArticlesList } from "../articles/displayArticlesList";
+import { initializeSlider } from "../slider";
 
 const homeTab = document.getElementById("home-tab")!;
 const addArticleTab = document.getElementById("add-article-tab")!;
@@ -22,7 +22,7 @@ function showArticle() {
   articlesListOuterContainer.classList.remove("hidden");
   homeTab.classList.add("bg-white");
   addArticleTab.classList.remove("bg-white");
-  displayArticlesList();
+  initializeSlider();
 }
 
 homeTab.addEventListener("click", () => {
@@ -31,5 +31,4 @@ homeTab.addEventListener("click", () => {
 
 addArticleTab.addEventListener("click", () => {
   showForm();
-  console.log("Add article tab clicked!");
 });
