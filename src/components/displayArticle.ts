@@ -1,4 +1,4 @@
-import { Article } from "./articles.service";
+import { Article } from "../services/articles.service";
 import { marked } from "marked";
 
 const articleHeading = document.getElementById("article-heading")!;

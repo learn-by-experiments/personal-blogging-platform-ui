@@ -24,7 +24,6 @@ export class ArticlesService {
 
   async getArticles(): Promise<Article[]> {
     const response = await this.axiosInstance.get<Article[]>("/articles");
-    console.log(response.data);
     return response.data;
   }
 
@@ -38,7 +37,7 @@ export class ArticlesService {
         "/articles",
         article
       );
-      console.log(response);
+
       return response.data;
     } catch (error) {
       const e = error as AxiosError<{ error: string; message: any }>;
