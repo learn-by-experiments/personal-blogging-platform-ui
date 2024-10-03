@@ -1,0 +1,27 @@
+name: test for build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: clone the repository i.e. Check out repository code
+        uses: actions/checkout@v4.2.0
+      - name: setup node.js environment
+        uses: actions/setup-node@v4.0.4
+        with:
+          node-version: 20.x
+      - name: Check the node version
+        run: node -v
+      - name: Check the npm version
+        run: npm -v
+      - name: List project directory
+        run: ls
+      - name: Installing all dependencies
+        run: npm install
+      - name: Create build folder
+        run: npm run build
+      - name: List project directory
+        run: ls
+      - run: echo "🍏 build process is done"
