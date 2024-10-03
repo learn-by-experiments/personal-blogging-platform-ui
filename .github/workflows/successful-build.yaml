@@ -1,4 +1,4 @@
-name: build and deploy
+name: test for build
 on:
   - push
 jobs:
